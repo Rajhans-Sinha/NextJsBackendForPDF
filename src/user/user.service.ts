@@ -26,15 +26,6 @@ export class UserService {
     }
   }
 
-  findOne(id: any): User {
-    const users = this.readUsers();
-    const user = users.find(user => user.id === id);
-    if (!user) {
-      throw new NotFoundException(`User with id ${id} not found`);
-    }
-    return user;
-  }
-
   addUser(user: User): User {
     const users = this.readUsers();
     console.log(user);
